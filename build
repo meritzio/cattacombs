@@ -1,0 +1,13 @@
+#!/bin/sh
+
+buildDir=bin
+
+if [ ! -d "$buildDir" ]; then
+    mkdir $buildDir
+fi
+
+cd $buildDir
+cmake ..
+make
+cd ..
+
