@@ -3,6 +3,6 @@
 buildDir=bin
 
 if [ -d $buildDir ]; then
-    rm -r bin
+    rm -r $buildDir
 fi
 

@@ -1,13 +1,13 @@
-# Meteor Maker
-This is a simple library for generating meteors in OBJ/FBX asset format using basic standalone geometry types
+# Cattacombs
+A simple library for generating asset geometry with internal procedural pathways in OBJ (and maybe FBX) format using basic standalone geometry types
 
 ## What does it do?
-It takes a graph of geometrically connected lines (currently just linear support), interprets these as routes and builds a 3D catacomb-like meteor asset.
+It takes a graph of geometrically connected lines (currently just linear support), interprets these as routes and builds a 3D catacomb-like geometry asset.
 The intention is to create procedurally generated 3D catacomb mazes for use as in-game assets.
 
 ## The build system
 The build system is dependent on CMake, but given the simplicity of the classes you could put your own together.
-The bourne shell files 'build' and 'clean' are included for convenience.
+Bourne shell files 'build' and 'clean' are included for convenience. Batch files for convenience windows builds might be added in future commits.
 
 ## The generation plan
 1. A closed boundary volume is provided for placement of the external nodes (entrances/exits)
