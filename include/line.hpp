@@ -3,6 +3,7 @@
 
 #include "vector3.hpp"
 
+
 namespace cattacombs
 {
     /**
@@ -14,6 +15,8 @@ namespace cattacombs
         public:
             line(vector3 start=vector3(), vector3 end=vector3());
             ~line();
+            
+            ///The two points that make up the line
             vector3* points;
     };
 }

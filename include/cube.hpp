@@ -17,10 +17,14 @@ namespace cattacombs
             
             ///The width, breadth and depth of the cube
             vector3 dimensions;
-        
- //       private:
-            ///The cube vertices
+            
+            ///The vertices of the cube
             vector3* vertices;
+        protected:
+            ///The lines that join up the cube
+            line* lines;
+            ///The cube surfaces
+            surface* surfaces;
     };
 }
 

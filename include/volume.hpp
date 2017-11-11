@@ -16,7 +16,11 @@ namespace cattacombs
         public:
             volume();
             volume(vector3 position, vector4 rotation=vector4(0.0f, 0.0f, 0.0f, 0.0f), vector3 scale=vector3(1.0f, 1.0f, 1.0f));
+            ~volume();
+            
             surface* surfaces;
+            line* lines;
+            vector3* vertices;
             
             ///The position in world space
             vector3 position;

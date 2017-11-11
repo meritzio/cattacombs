@@ -1,7 +1,10 @@
 #ifndef SURFACE_HPP
 #define SURFACE_HPP
 
+#include <vector>
 #include "line.hpp"
+
+using namespace std;
 
 namespace cattacombs
 {
@@ -12,8 +15,13 @@ namespace cattacombs
     class surface
     {
         public:
+            ///default constructor
             surface();
-            line* wires;
+            ///Pass an array of lines and an index map for making the wire array
+            surface(line* lineArray, int order[], const int count);
+            
+            ///The wire references
+            vector<line*> wires;
     };
 }
 
