@@ -1,5 +1,5 @@
 #Meteor Maker
-This is a simple library for generating meteors in FBX asset format using basic standalone geometry types
+This is a simple library for generating meteors in OBJ/FBX asset format using basic standalone geometry types
 
 ##What does it do?
 It takes a graph of geometrically connected lines (currently just linear support), interprets these as routes and builds a 3D catacomb-like meteor asset.

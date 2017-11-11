@@ -13,9 +13,14 @@ namespace cattacombs
     {
         public:
             cube(vector3 point, vector3 position);
+            ~cube();
             
             ///The width, breadth and depth of the cube
             vector3 dimensions;
+        
+ //       private:
+            ///The cube vertices
+            vector3* vertices;
     };
 }
 

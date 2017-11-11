@@ -1,3 +1,9 @@
 #Ignore bin builds
 [Bb]in
 
+#Ignore vim swaps
+*.swp
+
+#Ignore ctags
+[Tt]ags
+
