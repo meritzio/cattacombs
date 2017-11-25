@@ -21,6 +21,9 @@ int main(int argc, char** argv)
     cout << "Randomly generating graph" << endl;
     graph* gr = graph::FromRandom(5, 7);
     
+    cout << "Graph topology: " << endl;
+    gr->PrintTopology();
+    
     //Place the graph into the geometry using connection rules
     cout << "Connecting graph" << endl;
     g.SetGraph(gr);

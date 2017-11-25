@@ -3,6 +3,7 @@
 
 #include "node.hpp"
 #include <vector>
+#include <stdexcept>
 
 using namespace std;
 
@@ -14,22 +15,40 @@ namespace cattacombs
      */
     class graph
     {
+        class connectionExc;
+        
         public:
             ///Construct a graph
             graph();
             ///Deallocate the graph and its child nodes
             ~graph();
             
-            //Add a dynamically allocated node to the graph
+            ///Add a dynamically allocated node to the graph
             void AddNode(node* n);
             
             ///Create a dynamically allocated graph from random, given a number of nodes to formulate the connections 
             /// (connections within reason)
-            static graph* FromRandom(const int nInnerNodes, const int nOuterNodes);
+            static graph* FromRandom(const int nInnerNodes, const int nOuterNodes, 
+                const int maxInnerConnections=5, const int maxOuterconnections=2);
             
+            ///Outline the graph topology into the console
+            void PrintTopology();
+                        
         private:
             ///The list of nodes that make up the graph
             vector<node*> nodes;
+            ///A convenience method for obtaining a random number in a range
+            int randN(const int max);
+            
+            class connectionExc : invalid_argument
+            {
+                public:
+                    ///Raise an error about maximum connections being reached in a graph
+                    connectionExc() : 
+                    invalid_argument(
+                    "All internal connections have been filled up! Not enough connectors to complete graph"
+                    ) {};
+            };
     };
 }
 

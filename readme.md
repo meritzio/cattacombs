@@ -15,5 +15,5 @@ Bourne shell files 'build' and 'clean' are included for convenience. Batch files
 3. The internal nodes are placed within the boundary surface volume according to internal placement rules
 4. A graph is generated from the nodes in order to generate the catacomb branches, according to connection rules (no route collision, for example)
 5. Geometry of the graph is created, the external surface forms the basis of geometry making
-6. The resulting surface model is triangulated and exported to FBX.
+6. The resulting surface model is triangulated and exported to OBJ(/FBX).
 
