@@ -1,5 +1,7 @@
 #include "node.hpp"
 
+using namespace cattacombs;
+
 cattacombs::node::node(bool entryPoint)
 {
     this->entryPoint = entryPoint;
@@ -27,4 +29,13 @@ bool cattacombs::node::EntryPoint()
     return entryPoint;
 }
 
-
+vector<node*> cattacombs::node::GetConnections()
+{
+    int iL = nodes.size();
+    vector<node*> array;
+    
+    for(int i = 0; i < iL; i++)
+        array.push_back(nodes[i]);
+    
+    return array;
+}

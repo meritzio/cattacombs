@@ -3,6 +3,7 @@
 
 #include "node.hpp"
 #include <vector>
+#include <random>
 #include <stdexcept>
 
 using namespace std;
@@ -23,6 +24,8 @@ namespace cattacombs
             ///Deallocate the graph and its child nodes
             ~graph();
             
+            ///Get a representational state of the nodes
+            vector<node*> GetNodes();
             ///Add a dynamically allocated node to the graph
             void AddNode(node* n);
             
@@ -39,6 +42,8 @@ namespace cattacombs
             vector<node*> nodes;
             ///A convenience method for obtaining a random number in a range
             int randN(const int max);
+            ///The generator for making random quantities
+            default_random_engine *randEngine;
             
             class connectionExc : invalid_argument
             {

@@ -58,4 +58,4 @@ namespace cattacombs
     };
 }
 
-#endif
+#endif //XVECTOR_HPP

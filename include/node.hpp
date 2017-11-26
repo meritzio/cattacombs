@@ -24,6 +24,8 @@ namespace cattacombs
             bool EntryPoint();
             ///The number of connections the node has made
             int connections();
+            ///Get the nodes this node is connected to
+            vector<node*> GetConnections();
             
         private:
             ///The child nodes this node is connected to
