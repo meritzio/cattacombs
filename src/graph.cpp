@@ -146,24 +146,31 @@ void cattacombs::graph::PrintTopology()
 {
     map<node*, char*> nameDict;
     int iL = nodes.size();
-    const int base = 26;
+    const int base = 16;
     char** nodeNames = new char*[iL];
+    char hexBase[] = "0123456789ABCDEF";
     
-    //Populate the dict with node name associations as alphanumeric base
+    //Populate the dict with node name associations as hexadecimal base
     for(int i = 0; i < iL; i++) {
         
-        int charSize = (int)(log10((float)(i+1))/log10((float)base)) + 1; //Length of chars
-        char* chars = new char[charSize]; 
+        vector<char> chars;
+        chars.push_back('\0');
         
-        int value = i;
+        int val = i;
+        do {
+            char alfa = hexBase[val % base];
+            chars.push_back(alfa);
+            val /= base;
+        } while(val > 0);
+        cout << endl;
+
+        int jL = chars.size();
+        char* name = new char[jL];
+        for(int j = 0; j < jL; j++)
+            *(name + jL - j - 1) = chars[j];
         
-        for(int j = 0; j < charSize; j++) {
-            *(chars +j) = 'a' + (char)(value % base);
-            value /= base;
-        }
-        
-        nodeNames[i] = chars;
-        nameDict[nodes[i]] = chars;
+        nodeNames[i] = name;
+        nameDict[nodes[i]] = name;
     }
     
     //Now display all the node relationships
@@ -171,10 +178,21 @@ void cattacombs::graph::PrintTopology()
         
         char* name = nameDict[n];
         auto connections = n->GetConnections();
-        cout << '[' << *name << "] { ";
+        cout << '[';
+        while(*name) {
+            cout << *name;
+            name++;
+        }
+        cout << "] { ";
         
-        for(node* connection : connections)
-            cout << *(nameDict[connection]) << ' ';
+        for(node* connection : connections) {
+            name = nameDict[connection];
+            while(*name) {
+                cout << *name;
+                name++;
+            }
+            cout << ' ';
+        }
         
         cout << '}' << endl;
     }
