@@ -7,7 +7,13 @@ The intention is to create procedurally generated 3D catacomb mazes for use as i
 
 ## The build system
 The build system is dependent on CMake, but given the simplicity of the classes you could put your own together.
-Bourne shell files 'build' and 'clean' are included for convenience. Batch files for convenience windows builds might be added in future commits.
+Bourne shell files 'build' and 'clean' are included for convenience.
+
+- Linux Use: "./build.sh"
+- Windows Use: "./build.sh windows"
+
+Note that for windows usage, the build relies on the git bash and MinGW, and will build 32-bit.
+You may need to call the command more than once to produce the build because of the git sh.exe in PATH, MinGW does not like this.
 
 ## The generation plan
 1. A closed boundary volume is provided for placement of the external nodes (entrances/exits)
