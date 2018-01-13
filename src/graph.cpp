@@ -162,7 +162,6 @@ void cattacombs::graph::PrintTopology()
             chars.push_back(alfa);
             val /= base;
         } while(val > 0);
-        cout << endl;
 
         int jL = chars.size();
         char* name = new char[jL];

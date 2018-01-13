@@ -28,10 +28,21 @@ int main(int argc, char** argv)
     cout << "Connecting graph" << endl;
     g.SetGraph(gr);
     
-    //TODO Apply connection rules
+    //TODO Setup spatial connection rules to geometry
+    /** CRITERIA
+     *  1. Describe how far apart the entry point nodes need to be on the surface for acceptance
+     *  2. Describe how far apart internal nodes need to be inside the volume for acceptance
+     *  3. Run a RNG spacial placement according to these rules
+     */
     
-    for(int i = 0; i < 8; i++)
-        cout << c.vertices[i].x << ',' << c.vertices[i].y << ',' << c.vertices[i].z << endl;
+    //TODO Setup branches geometry between nodes
+    /** CRITERIA
+     *  1. Specify the how the branches between should look 
+     *      (tunnel cross section profile (eg square/circlular),
+     *      branch pathway curvature to avoid intersection, or just straight lines)
+     *  2. Run with coefficients to drive path generation, geometry intersections/collisions not allowed
+     *      could have ability to displace the placed nodes slightly until placement rules are satisfied
+     */
     
     return 0;
 }
