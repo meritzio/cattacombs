@@ -38,6 +38,20 @@ vector<node*> cattacombs::graph::GetNodes()
     return nodeArray;
 }
 
+vector<node*> cattacombs::graph::GetNodes(bool internal)
+{
+    int iL = nodes.size();
+    vector<node*> nodeArray;
+    
+    for(int i = 0; i < iL; i++) {
+        node* n = nodes[i];
+        if(internal != n->EntryPoint()) {
+            nodeArray.push_back(n);
+        }
+    }
+    
+    return nodeArray;
+}
 
 void cattacombs::graph::AddNode(node* n)
 {

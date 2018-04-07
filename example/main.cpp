@@ -30,10 +30,12 @@ int main(int argc, char** argv)
     
     //TODO Setup spatial connection rules to geometry
     /** CRITERIA
-     *  1. Describe how far apart the entry point nodes need to be on the surface for acceptance
+     *  1. Describe how far apart the entry point nodes need to be on the surface for acceptance DOING
      *  2. Describe how far apart internal nodes need to be inside the volume for acceptance
      *  3. Run a RNG spacial placement according to these rules
      */
+    g.SetExternalNodeValidationFunction(generator::MinRadiusValid);
+    g.PlaceExternalNodes();
     
     //TODO Setup branches geometry between nodes
     /** CRITERIA

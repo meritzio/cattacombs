@@ -5,6 +5,7 @@ using namespace cattacombs;
 cattacombs::node::node(bool entryPoint)
 {
     this->entryPoint = entryPoint;
+    this->position = nullptr;
 }
 
 void cattacombs::node::connect(node* node)
@@ -39,3 +40,9 @@ vector<node*> cattacombs::node::GetConnections()
     
     return array;
 }
+
+void cattacombs::node::SetPosition(vector3* v3)
+{
+    this->position = v3;
+}
+

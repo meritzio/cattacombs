@@ -1,4 +1,3 @@
-
 #include "volume.hpp"
 
 cattacombs::volume::volume()
@@ -28,3 +27,8 @@ cattacombs::volume::~volume()
     delete[] vertices;
 }
 
+cattacombs::vector3 cattacombs::volume::GetRandomSurfacePoint()
+{
+    //TODO implementation of selecting a random point on surface using RNG
+    return vector3();
+}

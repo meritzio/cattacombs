@@ -2,6 +2,7 @@
 #define NODE_HPP
 
 #include "xvector.hpp"
+#include "vector3.hpp"
 
 using namespace std;
 
@@ -26,12 +27,16 @@ namespace cattacombs
             int connections();
             ///Get the nodes this node is connected to
             vector<node*> GetConnections();
+            ///Set the position of the node
+            void SetPosition(vector3* v3);
             
         private:
             ///The child nodes this node is connected to
             xvector<node*> nodes;
             ///Whether the node is an entry point
             bool entryPoint;
+            ///The position on the surface (null if unplaced)
+            vector3* position;
     };
 }
 

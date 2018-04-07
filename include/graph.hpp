@@ -26,6 +26,8 @@ namespace cattacombs
             
             ///Get a representational state of the nodes
             vector<node*> GetNodes();
+            ///Get internal/external nodes of the graph exclusively
+            vector<node*> GetNodes(bool internal);
             ///Add a dynamically allocated node to the graph
             void AddNode(node* n);
             
